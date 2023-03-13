@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="../styles/index.css">
+  <script type="module" src="../scripts/hidePins.js"></script>
+  <script type="module" src="../scripts/bodyLocks.js"></script>
+  <script type="module" src="../scripts/searchByHashTags.js"></script>
+  <script type="module" src="../scripts/renderImgs.js"></script>
+  <script type="module" src="../scripts/utils.js"></script>
+  <script type="module" src="../scripts/closeDropdown.js"></script>
+  <script type="module" src="../scripts/openDropdown.js"></script>
+  <script type="module" src="../scripts/index.js"></script>
+  <title>pinterestClone</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <nav class="header__nav">
+        <a href="#">
+        <div class="logo">
+          <i class="fa-brands fa-pinterest"></i>
+        </div>
+        </a>
+
+        <div class="header__main">
+          <a href="#">
+            <button class="homeButton">Главная</button>
+          </a>
+        </div>
+
+        <div class="header__create">
+          <button id="addPinButton" class="addPinButton">
+            Создать
+            <i class="fa-solid fa-chevron-down">
+            </i>
+          </button>
+          <div id="header__create-dropdown" class="dropdown-content">
+            <div class="pin-containerDown">
+              <div class="pin">
+                <a href="#home">
+                  Создать пин-идею
+                </a>
+              </div>
+              <div class="pin">
+                <a href="#about">
+                  Создать пин
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="header__search">
+          <input id="searchbar" type="text" class="search-bar" placeholder="Search">
+        </div>
+
+        <div class="header__notifications">
+          <div class="button-container">
+            <button data-title="Уведомления">
+              <i class="fa-solid fa-bell"></i>
+            </button>
+            <button data-title="Сообщения">
+              <i class="fa-solid fa-comment-dots"></i>
+            </button>
+            <button data-title="Профиль">
+              <i class="fa-solid fa-circle-user"></i>
+            </button>
+            <button id="addBoardButton" class="addBoardButton dropdown-btn" data-title="Аккаунты и другие параметры">
+              <i class="fa-solid fa-chevron-down addBoardButton dropdown-btn"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div id="header__board-dropdown" class="dropdown-board dropdown-fields">
+        <div class="board-container">
+          <div class="board-content">
+            <div class="account">
+              <h5>Сейчас:</h5>
+              <div class="user">
+                <div class="user-logo">
+                  <i class="fa-brands fa-pinterest"></i>
+                </div>
+                <div class="user-description">
+                  <h3>Pinterest</h3>
+                  <h4>Рабочий</h4>
+                  <h4>Help.pinterest.com</h4>
+                </div>
+                <div class="confirmation">
+                  <i class="fa-sharp fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+            <div class="board-name">
+              <h5>Дополнительно</h5>
+              <h2>Выберите желаемую доску:</h3>
+            </div>
+            <div class="board-list">
+              <div class="board">
+                <a href="#home">
+                  Доска 1
+                </a>
+              </div>
+              <div class="board">
+                <a href="#home">
+                  Доска 2
+                </a>
+              </div>
+              <div class="board">
+                <a href="#home">
+                  Доска 3
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__responsive">
+      <div class="header__responsive_container">
+        <button class="resposiveBtn">Для вас</button>
+      </div>
+    </div>
+
+    </header>
+
+    <main>
+      <div class="main-container">
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/InfinitiStones.jpg" alt="Infiniti Stones"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <img src="../images/boardOne/dashy-quinn.jpg" alt="icon of user Dashy Quinn">
+            <p>𝒟𝒶𝓈𝒽𝓎 𝒬𝓊𝒾𝓃𝓃</p>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/Ace-Cards.jpg" alt="Cards"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <p>Neon cards</p>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/cat.png" alt="Playing cat"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <p>Christmas cat</p>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+          <p>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/Shield.jpg" alt="Shield"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <img src="../images/boardOne/martina-pullano.jpg" alt="icon of user Martina Pullano">
+            <h3>Martina Pullano</h3>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/AngelWings.png" alt="Angel Wings"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <h4>Angel Wings IPhone Wallpaper HD</h4>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/ballerina.jpg" alt="Dansing ballerina"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <p>Interesting and funny in design</p>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/congrats.jpg" alt="Congratulation card"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <p>Поздравления</p>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/DeadPool.jpg" alt="Мёртвый бассейн"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <img src="../images/boardOne/silly-me.jpg" alt="icon of user SillyMe">
+            <h3>SillyMe</h3>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/DarkScienceSpace.png" alt="Dark Science Space"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <h4>Dark science fiction orange - Apps on</h4>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/Man-in-Black.jpg" alt="Man in black"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <p>Black beauty</p>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/InYan.jpg" alt="In Yan"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <img src="../images/boardOne/mammas-boots.jpg" alt="icon of user Mamma's Boots">
+            <h4>Mamma's Boots</h4>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/money.jpg" alt="Money and Dicaprio"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <p>Фото обои на телефон</p>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/Writers Gallery.jpg" alt="Writers Gallery"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <p>Writers Gallery | Галерея Писателей</p>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/Tattoo-ideas.jpg" alt="Ideas of tattoo"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <h3>Tattoo ideas</h3>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+        <div class="pin-container">
+          <div class="pin-subcontainer">
+
+            <div id="main__pin-dropdown" class="main__pin-dropdown">
+              <div class="pin-dropdown__container">
+                <div class="pin-dropdown">
+                  <a href="#add" class="boardBtn">
+                    Добавить на доску
+                  </a>
+                </div>
+                <div class="pin-dropdown hidePin">
+                  <a href="#hide">
+                    Скрыть пин
+                  </a>
+                </div>
+                <div class="pin-dropdown">
+                  <a href="#complain" class="complaintBtn">
+                    Пожаловаться на пин
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- <img class="pin-image" src="../images/boardOne/Hex.jpg" alt="Hex"> -->
+            <div class="pin-subcontainer-overlay">
+              <div class="topPinButtons">
+                <h3>
+                  Профиль
+                  <i class="fa-solid fa-chevron-down">
+                  </i>
+                </h3>
+                <button class="saveButton">Сохранить</button>
+              </div>
+              <div class="bottomPinButtons">
+                <button class="modal1">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="modal2">
+                  <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="pin-description">
+            <img src="../images/boardOne/heizenberg.jpg" alt="icon of user heizenberg">
+            <p>heizenberg</p>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <nav class="footer__nav">
+        <button class="footer__home">
+          <i class="fa-solid fa-house"></i>
+        </button>
+        <button class="footer__search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="footer__messages">
+          <i class="fa-solid fa-comment-dots"></i>
+        </button>
+        <button class="footer__profile">
+          <i class="fa-solid fa-user"></i>
+        </button>
+      </nav>
+    </footer>
+
+    <div class="modal-board-overlay">
+      <div class="modal-board">
+        <div class="modal-board-header">
+          <h1>Выберите пожалуйста вашу доску</h1>
+        </div>
+        <div class="modal-board-main">
+          <div class="boardName">
+            <h3>Доска 1</h3>
+          </div>
+          <div class="boardName">
+            <h3>Доска 2</h3>
+          </div>
+          <div class="boardName">
+            <h3>Доска 3</h3>
+          </div>
+          <div class="boardName">
+            <h3>Доска 4</h3>
+          </div>
+          <div class="boardName">
+            <h3>Доска 5</h3>
+          </div>
+          <div class="boardName">
+            <h3>Доска 6</h3>
+          </div>
+          <div class="boardName">
+            <h3>Доска 7</h3>
+          </div>
+          <div class="boardName">
+            <h3>Доска 8</h3>
+          </div>
+          <div class="boardName">
+            <h3>Доска 9</h3>
+          </div>
+          <div class="boardName">
+            <h3>Доска 10</h3>
+          </div>
+        </div>
+        <div class="modal-board-footer">
+          <button class="cancelBoardBtn">Отмена</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-complaint-overlay">
+      <div class="modal-complaint">
+        <div class="modal-complaint-header">
+          <h1>Жалоба на пин</h1>
+        </div>
+        <div class="modal-complaint-main">
+          <div class="complaints">
+            <div class="subcomplaints">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-one">
+                <label class="form-check-label" for="check-input-one">
+                  <div>Спам</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>Вводящие в заблуждение или повторяющиеся публикации</h5>
+              </div>
+            </div>
+            <div class="subcomplaints">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-two">
+                <label class="form-check-label" for="check-input-two">
+                  <div>Изображения обнажённого тела или порнография</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>Содержимое сексуального характера</h5>
+              </div>
+            </div>
+            <div class="subcomplaints">
+              <div>
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-three">
+                <label class="form-check-label" for="check-input-three">
+                  <div>Членовредительство</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>Расстройства пищевого поведения, нанесение травм себе, суицид</h5>
+              </div>
+            </div>
+            <div class="subcomplaints">
+              <div>
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-four">
+                <label class="form-check-label" for="check-input-four">
+                  <div>Ложная информация</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>Ложная информация о здоровье, климате, голосованиях или теории заговора</h5>
+              </div>
+            </div>
+            <div class="subcomplaints">
+              <div>
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-five">
+                <label class="form-check-label" for="check-input-five">
+                  <div>Агрессивные действия</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>Предрассудки, стереотипы, идея превосходства белой расы, оскорбления</h5>
+              </div>
+            </div>
+            <div class="subcomplaints">
+              <div>
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-six">
+                <label class="form-check-label" for="check-input-six">
+                  <div>Опасные товары</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>Наркотики, оружие, регулируемые товары</h5>
+              </div>
+            </div>
+            <div class="subcomplaints">
+              <div>
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-seven">
+                <label class="form-check-label" for="check-input-seven">
+                  <div>Преследование или критика</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>Оскорбления, угрозы, изображения обнаженного тела, опубликованные без разрешения</h5>
+              </div>
+            </div>
+            <div class="subcomplaints">
+              <div>
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-eight">
+                <label class="form-check-label" for="check-input-eight">
+                  <div>Сцены насилия</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>Графическое изображение или пропаганда насилия</h5>
+              </div>
+            </div>
+            <div class="subcomplaints">
+              <div>
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-nine">
+                <label class="form-check-label" for="check-input-nine">
+                  <div>Нарушение конфиденциальности</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>личные фотографии, персональная информация</h5>
+              </div>
+            </div>
+            <div class="subcomplaints">
+              <div>
+                <input class="form-check-input" type="checkbox" name="check-input" id="check-input-ten">
+                <label class="form-check-label" for="check-input-ten">
+                  <div>Это моя интеллектуальная собственность</div>
+                </label>
+              </div>
+              <div class="complaint-description">
+                <h5>Нарушение авторских прав или прав на товарный знак</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-complaint-footer">
+          <div class="complaint-buttons">
+            <button class="cancelComplaintBtn">Отмена</button>
+            <button class="furtherBtn">Далее</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

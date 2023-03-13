@@ -1,0 +1,436 @@
+header {
+  width: 100%;
+  height: 80px;
+  padding: 4px 16px;
+  @include flex-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #fff;
+
+  nav {
+    width: 100%;
+    height: 56px;
+    @include flex-center;
+
+    a {
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      @include flex-center;
+      cursor: pointer;
+      transition: all .3s ease;
+
+      .fa-pinterest {
+        width: 24px;
+        height: 24px;
+        color: #e60023;
+        font-size: 1.5em;
+        @include flex-center;
+        margin: 0 12px;
+      }
+    }
+
+    .logo:hover {
+      background-color: #e9e9e9;
+    }
+
+    .logo:active {
+      transform: scale(0.9);
+      transition-duration: 0.1s;
+      background-color: #d1d1d1;
+    }
+
+    button {
+      border: none;
+      background-color: white;
+      transition: all .4s ease;
+    }
+
+    .homeButton {
+      padding: 0 16px;
+      width: 98px;
+      height: 48px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 18px;
+      color: white;
+      background-color: black;
+      @include flex-center;
+      cursor: pointer;
+    }
+
+    .header__create {
+      
+      .addPinButton {
+        width: 112px;
+        height: 48px;
+        font-weight: 600;
+        font-size: 18px;
+        @include flex-center;
+        cursor: pointer;
+      }
+
+      .fa-chevron-down {
+        font-weight: 600;
+        font-size: 14px;
+        margin-left: 5px;
+        cursor: pointer;
+        pointer-events: none;
+      }
+    }
+
+    .search-bar {
+      width: 100%;
+      margin: 0px 5px;
+      padding: 12px 35px;
+      border-radius: 40px;
+      outline: none;
+      position: relative;
+      background-color: #efefef;
+      font-weight: 400;
+      font-size: 18px;
+      background-image: url("https://cdn4.iconfinder.com/data/icons/music-ui-solid-24px/24/search-3-256.png");
+      background-size: 21px;
+      background-repeat: no-repeat;
+      background-position: center left;
+      background-position: 10px;
+      color: gray;
+      border: 4px solid transparent;
+    }
+
+    .search-bar:hover {
+      background-color: rgba(71, 71, 71, 0.2);
+      transition-duration: 0.3s;
+    }
+
+    .search-bar:focus {
+      border: 4px solid #7bb5f0;
+      padding: 12px 20px;
+      background-image: none;
+    }
+
+    .search-bar::placeholder {
+      user-select: none;
+    }
+
+    .button-container {
+      width: 168px;
+      height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 8px;
+
+      button {
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        position: relative;
+
+        .fa-solid {
+          width: 24px;
+          height: 24px;
+          color: rgb(126, 124, 124);
+          font-size: 1.5em;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+        }
+
+        .fa-chevron-down {
+          top: 5px;
+          left: 3px;
+        }
+
+        .fa-solid:active {
+          color: #000;
+        }
+      }
+
+      button:last-of-type {
+        width: 30px;
+        height: 30px;
+      }
+
+      button:hover {
+        background-color: #e9e9e9;
+        cursor: pointer;
+        transition-duration: 0.3s;
+      }
+
+      button:hover::after {
+        content: attr(data-title);
+        position: absolute;
+        left: -10px;
+        bottom: -40px;
+        z-index: 2;
+        border-radius: 5px;
+        background-color: #000;
+        color: white;
+        font-size: 11px;
+        padding: 10px 5px;
+        border: none;
+        text-align: center;
+      }
+
+      button:last-child:hover::after {
+        left: -40px;
+        bottom: -70px;
+      }
+    }
+  }
+}
+
+.dropdown-content {
+  width: 185px;
+  height: 90px;
+  border-radius: 16px;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  top: 76px;
+  left: 118px;
+
+  .pin-containerDown {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 8px 8px;
+  }
+
+  .pin {
+    width: 165px;
+    height: 35px;
+    border-radius: 8px;
+  }
+
+  a {
+    color: black;
+    padding: 8px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+
+  .pin:hover {
+    background-color: #e9e9e9;
+    transition-duration: 0.3s;
+  }
+
+  .pin:active {
+    transform: scale(0.9);
+    transition-duration: 0.1s;
+    background-color: #d1d1d1;
+  }
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+  transition-duration: 0.3s;
+}
+
+.header__search {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.header__responsive {
+  display: none;
+}
+
+.dropdown-board {
+  display: none;
+
+  .account {
+    padding: 8px;
+
+    h5 {
+      font-size: 15px;
+      font-weight: 400;
+      display: block;
+    }
+
+    .user {
+      margin-top: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      height: 75px;
+      display: flex;
+      padding: 8px;
+    }
+
+    .user-logo{
+        max-width: 60px;
+        max-height: 60px;
+        border-radius: 50%;
+        @include flex-center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+  
+        .fa-pinterest {
+          width: 60px;
+          height: 60px;
+          color: #e60023;
+          font-size: 3em;
+          @include flex-center;
+        }
+      }
+    .user-description{
+      max-width: 160px;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h3{
+        font-size: 18px;
+      }
+
+      h4{
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .confirmation{
+    width: 12px;
+    @include flex-center;
+    margin-left: 70px;
+
+
+    .fa-check{
+      font-size: 1em;
+      @include flex-center;
+    }
+  }
+
+  .board-container {
+    width: 340px;
+    height: 430px;
+    border-radius: 16px;
+    position: absolute;
+    background-color: #fff;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    top: 70px;
+    right: 5px;
+  }
+
+  .board-content {
+    padding: 8px;
+  }
+
+  .board-name {
+    margin-top: 8px;
+    margin-bottom: 10px;
+    padding: 8px;
+
+    h5{
+      margin-top: 16px;
+      font-size: 15px;
+      font-weight: 400;
+      display: block;
+    }
+
+    h2 {
+      margin-top: 30px;
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 18px;
+    }
+  }
+
+  .board-list {
+    margin-bottom: 8px;
+
+    .board {
+      height: 50px;
+      border-radius: 8px;
+      padding-top: 12px;
+      padding-left: 40px;
+
+      a {
+        color: black;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 16px;
+        text-align: center;
+      }
+    }
+  }
+
+  .board:hover {
+    background-color: #e9e9e9;
+    transition-duration: 0.3s;
+  }
+
+  .board:active {
+    transform: scale(0.9);
+    transition-duration: 0.1s;
+    background-color: #d1d1d1;
+  }
+
+  .user:hover {
+    background-color: #e9e9e9;
+    transition-duration: 0.3s;
+  }
+}
+
+.show {
+  display: block;
+}
+
+@media screen and (max-width: 610px) {
+
+  .header {
+    height: 60px;
+
+    nav {
+      display: none;
+    }
+
+    .header__responsive {
+
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+
+      .header__responsive_container {
+        width: 100%;
+        height: 56px;
+        @include flex-center;
+        justify-content: space-around;
+
+
+        button {
+          padding: 0 16px;
+          width: 90px;
+          height: 37px;
+          border-radius: 24px;
+          font-weight: 530;
+          font-size: 14px;
+          color: white;
+          background-color: black;
+          @include flex-center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
